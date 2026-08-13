@@ -1,2 +1,0 @@
-
-D:\Web qu?n ly d?i b¢ng (1)>  "C:\Program Files\nodejs\\node.exe"  "C:\Program Files\nodejs\\node_modules\corepack\dist\corepack.js" pnpm exec node -e import('./scripts/tune.mjs').then(()=
