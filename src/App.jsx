@@ -32,7 +32,7 @@ function calcRating(s, m) {
   const g = POS_GROUP[s.position] ?? "MID";
   const accPct = (s.passesAttempted ?? 0) > 0 ? (s.passesSuccess / (s.passesAttempted ?? 0)) * 100 : null;
   const accBonus = accPct == null ? 0 : accPct >= 85 ? 0.2 : accPct >= 75 ? 0.1 : accPct >= 60 ? 0 : -0.2;
-  const goalW = { GK: 1.4, DEF: 1.4, MID: 1.0, ATT: 0.6 }[g];
+  const goalW = { GK: 1.6, DEF: 1.4, MID: 1.0, ATT: 0.6 }[g];
   const assistW = { GK: 1.2, DEF: 1.2, MID: 0.8, ATT: 0.55 }[g];
   const cleanSheetW = { GK: 0.5, DEF: 0.35, MID: 0.15, ATT: 0.1 }[g];
   const contrib = s.minutesPlayed * 0.002 + s.goals * goalW + s.assists * assistW + s.shotsOnTarget * 0.07 + s.tackles * 0.06 + s.interceptions * 0.06 + s.saves * 0.06 + s.passesSuccess * 0.0025 + (s.keyPasses ?? 0) * 0.1 + (s.dribbles ?? 0) * 0.1 + (s.clearances ?? 0) * 0.025 + (s.ballRecoveries ?? 0) * 0.025 + (s.penaltySaved ?? 0) * 1.0;
@@ -340,7 +340,7 @@ function HistoryTab({ history, members, setHistory }) {
   const MAX_LINEUP = 7;
 
   function initStat(name, pos) {
-    return { playerName: name, position: pos, minutesPlayed: 75, goals: 0, assists: 0, passesSuccess: 0, passesAttempted: 0, tackles: 0, shotsOnTarget: 0, interceptions: 0, saves: 0, keyPasses: 0, dribbles: 0, dribbledPast: 0, clearances: 0, ballRecoveries: 0, penaltySaved: 0, penaltyMissed: 0, ownGoal: 0, yellowCard: false, redCard: false, rating: 0 };
+    return { playerName: name, position: pos, minutesPlayed: 75, goals: 0, assists: 0, passesSuccess: 0, passesAttempted: 0, tackles: 0, shotsOnTarget: 0, shotsTotal: 0, shotsMissed: 0, interceptions: 0, saves: 0, keyPasses: 0, dribbles: 0, dribbledPast: 0, clearances: 0, ballRecoveries: 0, penaltySaved: 0, penaltyMissed: 0, ownGoal: 0, yellowCard: false, redCard: false, rating: 0 };
   }
 
   function addPlayer(em, memberId) {
@@ -483,8 +483,8 @@ function HistoryTab({ history, members, setHistory }) {
                     <span className={`font-bold text-lg ${RatingColor(preview)}`}>{preview.toFixed(1)}</span>
                   </div>
                   <div className="grid grid-cols-5 gap-2">
-                    {[{ key: "minutesPlayed", label: "Phút", max: 75 }, { key: "goals", label: "Bàn", max: 10 }, { key: "assists", label: "Kiến tạo", max: 10 }, { key: "passesSuccess", label: "Chuyền thành công", max: 80 }, { key: "passesAttempted", label: "Tổng C", max: 100 }, { key: "keyPasses", label: "Key passes", max: 12 }, { key: "tackles", label: "Tắc bóng", max: 15 }, { key: "interceptions", label: "Cắt bóng/Đánh chặn", max: 15 }, { key: "dribbles", label: "Rê bóng", max: 12 }, { key: "dribbledPast", label: "Bị qua người", max: 12 }, { key: "shotsOnTarget", label: "Sút chuẩn", max: 10 }, { key: "clearances", label: "Phá bóng/giải vây", max: 20 }, { key: "ballRecoveries", label: "Cướp lại bóng", max: 20 }, { key: "saves", label: "TM cứu thua", max: 12 }, { key: "yellowCard", label: "Thẻ vàng", max: 1 }, { key: "redCard", label: "Thẻ đỏ", max: 1 }].map(({ key, label, max }) => {
-                      const val = s[key];
+                    {[{ key: "minutesPlayed", label: "Phút", max: 75 }, { key: "goals", label: "Bàn", max: 10 }, { key: "assists", label: "Kiến tạo", max: 10 }, { key: "passesSuccess", label: "Chuyền thành công", max: 80 }, { key: "passesAttempted", label: "Tổng C", max: 100 }, { key: "keyPasses", label: "Key passes", max: 12 }, { key: "tackles", label: "Tắc bóng", max: 15 }, { key: "interceptions", label: "Cắt bóng/Đánh chặn", max: 15 }, { key: "dribbles", label: "Rê bóng", max: 12 }, { key: "dribbledPast", label: "Bị qua người", max: 12 }, { key: "shotsOnTarget", label: "Sút chuẩn", max: 10 }, { key: "shotsTotal", label: "Tổng cú sút", max: 20 }, { key: "shotsMissed", label: "Bỏ lỡ", max: 20 }, { key: "clearances", label: "Phá bóng/giải vây", max: 20 }, { key: "ballRecoveries", label: "Cướp lại bóng", max: 20 }, { key: "saves", label: "TM cứu thua", max: 12 }, { key: "yellowCard", label: "Thẻ vàng", max: 1 }, { key: "redCard", label: "Thẻ đỏ", max: 1 }].map(({ key, label, max }) => {
+                      const val = s[key] ?? 0;
                       if (key === "yellowCard" || key === "redCard") {
                         return (<div key={key}><div className="text-[8px] text-slate-400 mb-1">{label}</div><button onClick={() => updateStat(em, s.playerName, key, !val)} className={`w-full py-1 rounded text-xs ${val ? (key === "yellowCard" ? "bg-amber-100 text-amber-700" : "bg-red-100 text-red-700") : "bg-slate-100 text-slate-500 border border-slate-200"}`}>{val ? (key === "yellowCard" ? "Vàng" : "Đỏ") : "-"}</button></div>);
                       }
