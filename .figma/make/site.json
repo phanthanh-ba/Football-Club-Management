@@ -1,0 +1,10 @@
+{
+  "description": "Manage your football team with ease by tracking upcoming match schedules, member voting participation, and team funds, alongside player statistics.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

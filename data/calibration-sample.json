@@ -1,0 +1,47 @@
+{
+  "note": "Sample SofaScore-style data for calibrating the rating formula. Real data can be pulled with: node scripts/sofa-scrape.mjs <eventId> ... (run on a network where sofascore.com is reachable)",
+  "matches": [
+    {
+      "eventId": 999101,
+      "homeTeam": "FC Xanh Đỏ",
+      "awayTeam": "FC Trắng",
+      "homeScore": 3,
+      "awayScore": 1,
+      "stats": [
+        { "player": "Trần Đức Mạnh", "position": "GK", "minutesPlayed": 90, "rating": 7.4, "goals": 0, "assists": 0, "passesSuccess": 24, "passesAttempted": 31, "passAccPct": 77, "tackles": 0, "interceptions": 0, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 0, "clearances": 2, "ballRecoveries": 4, "saves": 3, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Nguyễn Văn Hùng", "position": "CB", "minutesPlayed": 90, "rating": 7.8, "goals": 0, "assists": 0, "passesSuccess": 52, "passesAttempted": 61, "passAccPct": 85, "tackles": 4, "interceptions": 3, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 0, "clearances": 9, "ballRecoveries": 8, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Lê Quốc Bảo", "position": "LB", "minutesPlayed": 90, "rating": 7.1, "goals": 0, "assists": 0, "passesSuccess": 38, "passesAttempted": 47, "passAccPct": 81, "tackles": 3, "interceptions": 2, "shotsOnTarget": 0, "keyPasses": 1, "dribbles": 2, "clearances": 4, "ballRecoveries": 6, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Phạm Minh Tuấn", "position": "CAM", "minutesPlayed": 88, "rating": 8.4, "goals": 2, "assists": 1, "passesSuccess": 33, "passesAttempted": 38, "passAccPct": 87, "tackles": 1, "interceptions": 1, "shotsOnTarget": 4, "keyPasses": 3, "dribbles": 3, "clearances": 0, "ballRecoveries": 3, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Hoàng Anh Dũng", "position": "ST", "minutesPlayed": 90, "rating": 8.9, "goals": 3, "assists": 0, "passesSuccess": 15, "passesAttempted": 19, "passAccPct": 79, "tackles": 1, "interceptions": 0, "shotsOnTarget": 5, "keyPasses": 1, "dribbles": 1, "clearances": 0, "ballRecoveries": 2, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false }
+      ]
+    },
+    {
+      "eventId": 999102,
+      "homeTeam": "FC Xanh Đỏ",
+      "awayTeam": "FC Tím",
+      "homeScore": 1,
+      "awayScore": 1,
+      "stats": [
+        { "player": "Trần Đức Mạnh", "position": "GK", "minutesPlayed": 90, "rating": 6.9, "goals": 0, "assists": 0, "passesSuccess": 19, "passesAttempted": 26, "passAccPct": 73, "tackles": 0, "interceptions": 0, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 0, "clearances": 1, "ballRecoveries": 3, "saves": 2, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Nguyễn Văn Hùng", "position": "CB", "minutesPlayed": 90, "rating": 7.0, "goals": 0, "assists": 0, "passesSuccess": 47, "passesAttempted": 55, "passAccPct": 85, "tackles": 3, "interceptions": 2, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 0, "clearances": 7, "ballRecoveries": 7, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Lê Quốc Bảo", "position": "LB", "minutesPlayed": 90, "rating": 6.7, "goals": 0, "assists": 0, "passesSuccess": 34, "passesAttempted": 44, "passAccPct": 77, "tackles": 2, "interceptions": 2, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 1, "clearances": 5, "ballRecoveries": 5, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Phạm Minh Tuấn", "position": "CAM", "minutesPlayed": 90, "rating": 7.6, "goals": 1, "assists": 0, "passesSuccess": 36, "passesAttempted": 42, "passAccPct": 86, "tackles": 1, "interceptions": 1, "shotsOnTarget": 3, "keyPasses": 2, "dribbles": 2, "clearances": 0, "ballRecoveries": 3, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Hoàng Anh Dũng", "position": "ST", "minutesPlayed": 90, "rating": 7.2, "goals": 1, "assists": 0, "passesSuccess": 12, "passesAttempted": 16, "passAccPct": 75, "tackles": 0, "interceptions": 0, "shotsOnTarget": 2, "keyPasses": 1, "dribbles": 0, "clearances": 0, "ballRecoveries": 1, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false }
+      ]
+    },
+    {
+      "eventId": 999103,
+      "homeTeam": "FC Xanh Đỏ",
+      "awayTeam": "FC Đen",
+      "homeScore": 0,
+      "awayScore": 3,
+      "stats": [
+        { "player": "Trần Đức Mạnh", "position": "GK", "minutesPlayed": 90, "rating": 6.1, "goals": 0, "assists": 0, "passesSuccess": 20, "passesAttempted": 28, "passAccPct": 71, "tackles": 0, "interceptions": 0, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 0, "clearances": 2, "ballRecoveries": 4, "saves": 4, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Nguyễn Văn Hùng", "position": "CB", "minutesPlayed": 90, "rating": 5.8, "goals": 0, "assists": 0, "passesSuccess": 38, "passesAttempted": 50, "passAccPct": 76, "tackles": 2, "interceptions": 1, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 0, "clearances": 5, "ballRecoveries": 5, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Lê Quốc Bảo", "position": "LB", "minutesPlayed": 64, "rating": 5.6, "goals": 0, "assists": 0, "passesSuccess": 22, "passesAttempted": 31, "passAccPct": 71, "tackles": 1, "interceptions": 1, "shotsOnTarget": 0, "keyPasses": 0, "dribbles": 1, "clearances": 3, "ballRecoveries": 3, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": true, "redCard": false },
+        { "player": "Phạm Minh Tuấn", "position": "CAM", "minutesPlayed": 90, "rating": 6.0, "goals": 0, "assists": 0, "passesSuccess": 28, "passesAttempted": 40, "passAccPct": 70, "tackles": 1, "interceptions": 0, "shotsOnTarget": 1, "keyPasses": 1, "dribbles": 1, "clearances": 0, "ballRecoveries": 2, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false },
+        { "player": "Hoàng Anh Dũng", "position": "ST", "minutesPlayed": 90, "rating": 5.9, "goals": 0, "assists": 0, "passesSuccess": 11, "passesAttempted": 14, "passAccPct": 79, "tackles": 0, "interceptions": 0, "shotsOnTarget": 1, "keyPasses": 0, "dribbles": 0, "clearances": 0, "ballRecoveries": 1, "saves": 0, "penaltySaved": 0, "penaltyMissed": 0, "ownGoal": 0, "yellowCard": false, "redCard": false }
+      ]
+    }
+  ]
+}
