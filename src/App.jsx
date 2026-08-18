@@ -436,6 +436,17 @@ function HistoryTab({ history, members, setHistory }) {
                   <div key={lp.memberId} onPointerDown={(e) => handlePointerDown(e, em, lp.memberId)} title="Click 2 lần để đưa ra ngoài, kéo để di chuyển" className={`absolute text-center ${dragging ? "cursor-grabbing scale-110 z-10" : "cursor-grab hover:scale-110"} transition-transform select-none`} style={{ left: lp.x + "%", top: lp.y + "%", transform: "translate(-50%, -50%)" }}>
                     <div className={`w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm text-white shadow-lg ${member.position === "GK" ? "bg-amber-400 border-2 border-amber-300" : "bg-blue-600 border-2 border-blue-400"}`}>{member.jerseyNumber}</div>
                     <div className="text-[9px] text-white mt-0.5 bg-black/50 px-1 rounded whitespace-nowrap">{member.name.split(" ").pop()}</div>
+                    {(() => {
+                      const stat = em.playerStats.find((s) => s.playerName === member.name);
+                      const goals = stat?.goals ?? 0;
+                      const assists = stat?.assists ?? 0;
+                      return (
+                        <>
+                          {goals > 0 && <div className="text-[10px] leading-none mt-0.5">{"⚽".repeat(goals)}</div>}
+                          {assists > 0 && <div className="text-[10px] leading-none mt-0.5">{"👟".repeat(assists)}</div>}
+                        </>
+                      );
+                    })()}
                   </div>
                 );
               })}
